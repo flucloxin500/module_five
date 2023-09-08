@@ -1,171 +1,92 @@
-/// Module 05
-/// class 02
-
-// import 'package:flutter/material.dart';
-// void main (){
-//
-//   ///give some widget
-//   runApp(
-//   /// Material app
-//   //   MaterialApp(
-//   //     home: Scaffold(
-//   //       body: Center(
-//   //         child: Text('Hello World.!'),
-//   //       ),
-//   //     ),
-//   //   )
-//   // );
-//       MyApp()
-//   );
-// }
-// /// creating new widget
-//
-// // class MyApp extends Widget{
-// //   const MyApp({super.key});
-// //
-// //
-// //   @override
-// //   Element createElement() {
-// //     // TODO: implement createElement
-// //     throw UnimplementedError();
-// //   }
-// //
-// //
-// // }
-//
-// /// stateless widget
-// /// basic screen
-// /// Hot reload => ctrl + s
-// /// Hot restart => ctrl+shift+\
-// class MyApp extends StatelessWidget{
-//
-//   @override
-//   Widget build(BuildContext context){
-//     return MaterialApp(
-//       /// checking debug mode
-//       debugShowCheckedModeBanner: true,
-//       home: Scaffold(
-//         /// for AppBar
-//         appBar: AppBar(
-//           /// for getting title in appbar
-//           title: Text('Home'),
-//         ),
-//         body: Center(
-//           child: Text('Hello Future'),
-//         ),
-//       ),
-//       /// for adding/changing app title
-//       title: 'My App',
-//     );
-//
-//   }
-// }
-
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-void main (){
 
-  ///give some widget
-  runApp(
-    /// Material app
-    //   MaterialApp(
-    //     home: Scaffold(
-    //       body: Center(
-    //         child: Text('Hello World.!'),
-    //       ),
-    //     ),
-    //   )
-    // );
-      MyApp()
-  );
-}
-/// creating new widget
-
-// class MyApp extends Widget{
-//   const MyApp({super.key});
-//
-//
-//   @override
-//   Element createElement() {
-//     // TODO: implement createElement
-//     throw UnimplementedError();
-//   }
-//
-//
-// }
-
-/// stateless widget
-/// basic screen
-/// Hot reload => ctrl + s
-/// Hot restart => ctrl+shift+\
 class MyApp extends StatelessWidget{
-
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return MaterialApp(
-      /// checking debug mode
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        /// for background color
-        backgroundColor: Colors.blueGrey,
-        /// for AppBar
-        appBar: AppBar(
-          /// for appbar backgropund color
-          backgroundColor: Colors.amber,
-          /// for changing position of appBar title
-          centerTitle: true,
-          /// for getting title in appbar
-          title: Text('Home'),
-          // /// add leading text
-          // leading: Text('App'),
-          /// add leading icon
-          /// add leading color
-          /// add leading size
-          leading: Icon(Icons.adb_outlined,color: Colors.black,size: 20,),
+      debugShowCheckedModeBanner: true,
+      home: HomeScreen(),
+      title: 'Flucloxin 250',
+    );
+  }
+}
 
+class HomeScreen extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text('Home',
+          style: TextStyle(
+          color: Colors.white,
         ),
-        /// we can add more alignnment from body
-        /// Center
-        body:
-            // Center()
-          // /// creating textStyle
-          // child: Text('Hello Future',style: TextStyle(
-          //   /// changing text color
-          //   color: Colors.blue,
-          //       /// changing font size
-          //       fontSize: 25 ,
-          //   /// changing fontweight
-          //   fontWeight: FontWeight.bold,
-          //
-          // ),),
-          /// colomn add
-          ///child: Column()
-        ///for vertical is Coloumn
-        /// for horizontal is ROw
-          Column(
+        ),
+        toolbarHeight: 100,
+        backgroundColor: Colors.green,
+        elevation: 70,
+        actions: [
+          Icon(Icons.search),
+        ],
+        leading: Icon(Icons.add_business),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Hello Future',style: TextStyle(
-                color: Colors.greenAccent,
-                fontSize: 22,
-                fontWeight: FontWeight.w700,
+              Text('This is ', style:
+              TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 17,
               ),),
-              Text('Hello Future',style: TextStyle(
-                color: Colors.greenAccent,
-                fontSize: 22,
-                fontWeight: FontWeight.w700,
+              Text('mod 5 ', style:
+                TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 17
+                ),),
+              Text('Assignment',style: TextStyle(
+                fontSize: 17,
+                fontWeight: FontWeight.bold
               ),),
-              Text('Hello Future',style: TextStyle(
-                color: Colors.greenAccent,
-                fontSize: 22,
-                fontWeight: FontWeight.w700,
-              ),),
-              Icon(Icons.adb_outlined),
             ],
           ),
-        ),
-      //),
-      /// for adding/changing app title
-      title: 'My App',
+          SizedBox(
+            height: 20.0,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Text('My ',style: TextStyle(
+                fontSize: 21,
+                color: Colors.pink
+              ),),
+              Text('phone ',style: TextStyle(
+                  fontSize: 14,
+                  color: Colors.blue
+              ),),
+              Text('name ',style: TextStyle(
+                  fontSize: 19,
+                  color: Colors.deepPurpleAccent
+              ),),
+              Text('iPhone 11 ',style: TextStyle(
+                  fontSize: 22,
+                  color: Colors.orange
+              ),),
+            ],
+          )
+        ],
+      ),
     );
-
   }
+
+}
+
+void main (){
+  runApp(MyApp());
 }
