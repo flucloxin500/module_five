@@ -7,7 +7,6 @@ class MyApp extends StatelessWidget{
     return MaterialApp(
       debugShowCheckedModeBanner: true,
       home: HomeScreen(),
-      title: 'Flucloxin 250',
     );
   }
 }
@@ -23,60 +22,34 @@ class HomeScreen extends StatelessWidget{
           color: Colors.white,
         ),
         ),
-        toolbarHeight: 100,
-        backgroundColor: Colors.green,
-        elevation: 70,
-        actions: [
-          Icon(Icons.search),
-        ],
-        leading: Icon(Icons.add_business),
+        backgroundColor: Colors.blue,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          Icon(Icons.account_circle,
+            size: 65,
+            color: Colors.green,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('This is ', style:
+              Text('Jhon Doe', style:
               TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 17,
-              ),),
-              Text('mod 5 ', style:
-                TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 17
-                ),),
-              Text('Assignment',style: TextStyle(
-                fontSize: 17,
-                fontWeight: FontWeight.bold
+                fontSize: 29,
+                color: Colors.green
               ),),
             ],
-          ),
-          SizedBox(
-            height: 20.0,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              Text('My ',style: TextStyle(
+              Text('Flutter Batch 4',style: TextStyle(
                 fontSize: 21,
-                color: Colors.pink
-              ),),
-              Text('phone ',style: TextStyle(
-                  fontSize: 14,
-                  color: Colors.blue
-              ),),
-              Text('name ',style: TextStyle(
-                  fontSize: 19,
-                  color: Colors.deepPurpleAccent
-              ),),
-              Text('iPhone 11 ',style: TextStyle(
-                  fontSize: 22,
-                  color: Colors.orange
+                color: Colors.blue,
               ),),
             ],
           )
@@ -84,7 +57,6 @@ class HomeScreen extends StatelessWidget{
       ),
     );
   }
-
 }
 
 void main (){
